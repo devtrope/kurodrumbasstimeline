@@ -1,0 +1,17 @@
+{
+    "name": "devtrope/kurodrumbasstimeline",
+    "description": "A PHP library to convert dates to Before or After Kuro Drumbass",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "KuroDrumbassTimeline\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Quentin SCHIFFERLE",
+            "email": "dev.trope@gmail.com"
+        }
+    ],
+    "require": {}
+}
