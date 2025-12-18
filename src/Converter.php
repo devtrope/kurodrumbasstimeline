@@ -8,12 +8,14 @@ use IntlDateFormatter;
 class Converter
 {
     private const BASE_YEAR = 1993;
-    private const LOCALE = 'fr_FR';
 
-    private function formatDateLocale(DateTime $dateTime)
+    public function __construct(private Configuration $configuration)
+    {}
+
+    private function formatDateLocale(DateTime $dateTime): bool|string
     {
         $formatter = new IntlDateFormatter(
-            self::LOCALE,
+            $this->configuration->locale(),
             IntlDateFormatter::NONE,
             IntlDateFormatter::NONE,
             $dateTime->getTimezone()->getName(),
