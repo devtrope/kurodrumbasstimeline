@@ -12,8 +12,11 @@ class Configuration
         return $this;
     }
 
-    public function locale(): string
+    public function getLocale(): string
     {
+        if (strlen($this->locale) > 2) {
+            $this->locale = substr($this->locale, 0, 2);
+        }
         return $this->locale;
     }
 }
