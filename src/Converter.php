@@ -18,13 +18,19 @@ class Converter
 
     private function formatDateLocale(DateTime $dateTime): bool|string
     {
+        $pattern = 'dd MMMM';
+        if ($this->configuration->getIsAmerican()) {
+            // Because America !!!
+            $pattern = 'MMMM dd,';
+        }
+
         $formatter = new IntlDateFormatter(
             $this->configuration->getLocale(),
             IntlDateFormatter::NONE,
             IntlDateFormatter::NONE,
             $dateTime->getTimezone()->getName(),
             IntlDateFormatter::GREGORIAN,
-            'dd MMMM'
+            $pattern
         );
 
         return $formatter->format($dateTime);
