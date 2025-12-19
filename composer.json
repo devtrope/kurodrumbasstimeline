@@ -2,6 +2,7 @@
     "name": "devtrope/kurodrumbasstimeline",
     "description": "A PHP library to convert dates to Before or After Kuro Drumbass",
     "type": "library",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "KuroDrumbassTimeline\\": "src/"
